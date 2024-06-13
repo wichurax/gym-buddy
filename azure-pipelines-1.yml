@@ -3,9 +3,6 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
-trigger:
-- main
-
 pool:
   name: Default
 
@@ -26,6 +23,7 @@ steps:
 - task: AzureStaticWebApp@0
   inputs:
     app_location: '/'  # Lokalizacja aplikacji (np. '/' dla głównego katalogu)
-    output_location: 'build'  # Lokalizacja wynikowa (np. 'build' dla Create React App)
+    output_location: 'dist'  # Lokalizacja wynikowa (np. 'build' dla Create React App)
+    verbose: true
     azure_static_web_apps_api_token: $(default_Azure_Static_Web_App_deployment_token)  # Token wdrożenia
   displayName: 'Deploy to Azure Static Web App'
