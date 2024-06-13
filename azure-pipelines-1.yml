@@ -9,6 +9,9 @@ trigger:
 pool:
   name: Default
 
+variables:
+- group: Azure_secrets_group
+
 steps:
 - task: NodeTool@0
   inputs:
@@ -24,5 +27,5 @@ steps:
   inputs:
     app_location: '/'  # Lokalizacja aplikacji (np. '/' dla głównego katalogu)
     output_location: 'build'  # Lokalizacja wynikowa (np. 'build' dla Create React App)
-    azure_static_web_apps_api_token: $(deployment_token)  # Token wdrożenia
+    azure_static_web_apps_api_token: $(default_Azure_Static_Web_App_deployment_token)  # Token wdrożenia
   displayName: 'Deploy to Azure Static Web App'
