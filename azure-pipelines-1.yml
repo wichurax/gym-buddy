@@ -23,8 +23,8 @@ steps:
     npm run build
   displayName: 'npm install and build'
   env:
-    REACT_BASE_URL: "https://some-random-api-url"
-    REACT_API_KEY: "testable-api-key"
+    VITE_APP_URL: "https://some-random-api-url"
+    VITE_API_KEY: "testable-api-key"
 
 - task: AzureStaticWebApp@0
   inputs:
